@@ -5,18 +5,15 @@ Just write Markdown and see what it looks like as you type. And convert it to HT
 
 mome
 ====
->>>>>>> d30e6e01033969f91b27991e75dbfe9969923b66
 
-This is just edited version with Load and Save feature.
+This is just edited version with Load and Save feature, login support (folder have to be named as username,
+eg. your username is "admin" the folder needs to be ".saved/admin".
 
 See [mome demo](http://mome.fswitch.cz) in action.
 
 Every idea or tweaks are welcomed.
-<<<<<<< HEAD
-=======
 
 ### ToDo
-- Add DELETE button
-- Add login support for protecting private content
+
 - make this usable in Phile or Pico
 
