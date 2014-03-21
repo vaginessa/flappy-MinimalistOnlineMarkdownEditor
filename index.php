@@ -41,6 +41,8 @@
 			</div>
 			<div class="wrapper">
 				<div class="buttons-container">
+					<span id="current-file" class="button toppanel">Current file: 
+					<strong><?php echo $_COOKIE['cacheFileName'];?></strong></span>
 					<a href="#" class="button toppanel" data-toppanel="quick-login-area">Private</a>
 					<a href="#" class="button toppanel" data-toppanel="quick-reference">Files</a>
 					<a href="#" onClick="loadFromFile()" class="button toppanel">Load</a>

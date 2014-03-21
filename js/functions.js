@@ -22,6 +22,12 @@ function setCookie(cname,cvalue,exdays)
 		document.cookie = cname + "=" + cvalue + "; " + expires;
 	}
 
+function setCurrentFileName(id)
+	{	
+		var currentFileNameCookie = getCookie("cacheFileName");
+		document.getElementById(id).innerHTML = '<strong>Current file: '+currentFileNameCookie+'</strong>';
+	}
+
 function saveToFile()
 	{
 		var nameToSaveCookie = getCookie("cacheFileName");
@@ -46,6 +52,8 @@ function saveToFile()
 			// alert with the paths, just for control
 			alert ('File '+nameToSave+' was saved 666 to: ./save/'+subFolder+nameToSave);
 			setCookie("cacheFileName",nameToSave,"14");
+			// input the current file name value
+			setCurrentFileName("current-file");
 			// Reload list of files
 		    $.ajax({
 		    	url:'listfiles.php',
@@ -80,6 +88,8 @@ function loadFromFile(fileToLoad)
 			});
 		    // set cookie of current file name for future saving
 			setCookie("cacheFileName",fileToLoad,"14")
+			// input the current file name value
+			setCurrentFileName("current-file");
 		}
 	}
 function deleteFile(fileToDelete,subFolder)

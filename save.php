@@ -7,7 +7,7 @@ if ($_POST['subFolder'] != ""){
 $subfolder = $_POST['subFolder']."/"; 
 };
 
-$file = fopen("saved/".$subfolder.$sendname, 'w');//creates new file
+$file = fopen("saved/".$subfolder.$sendname, 'w');
 fwrite($file, $data);
 fclose($file);
 }
