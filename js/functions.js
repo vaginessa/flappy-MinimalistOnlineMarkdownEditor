@@ -69,7 +69,7 @@ function saveToFile()
 
 function loadFromFile(fileToLoad)
 	{	
-		var fileToLoad = prompt("Open file w/o .md?",fileToLoad);
+		var fileToLoad = prompt("Open file?\n(unsaved text will be lost)",fileToLoad);
 
 		if (fileToLoad!=null)
 		{	
