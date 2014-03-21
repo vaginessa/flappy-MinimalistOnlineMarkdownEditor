@@ -1,7 +1,5 @@
-## Default text to load
+## Testing file TEST 01 - In Admin folder
 
 New text to test!
-
-A new line of text, just for the heck of it ;)
 
 Saved as admin in Private.

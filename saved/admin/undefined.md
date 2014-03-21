@@ -1,7 +1,3 @@
-## Default text to load
-
-New text to test!
-
-A new line of text, just for the heck of it ;)
+## Default text to load if cookie goes wrong or so...
 
 Saved as admin in Private.
