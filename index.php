@@ -27,7 +27,7 @@
 					}else{
 						echo "You are here as Guest<br />";
 					};
-					include("/password_protect.php");
+					include("/data/www/19361/fswitch_cz/mome/password_protect.php");
 					?>
 				</div>
 				<div class="top_panel" id="quick-reference">
