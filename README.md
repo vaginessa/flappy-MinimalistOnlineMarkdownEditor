@@ -24,7 +24,7 @@ Private feature
 ![Current file feature image](http://mome.fswitch.cz/images/mome_screenshot_private.png "Private feature")
 
 List of files feature
-![List of files feature image](http://mome.fswitch.cz/images/mome_screenshot_list_files.png "List of files feature")
+![List of files feature image](http://mome.fswitch.cz/images/mome_screenshot_list_files_n.png "List of files feature")
 
 See [mome demo](http://mome.fswitch.cz) in action.
 
