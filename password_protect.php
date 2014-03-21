@@ -93,7 +93,7 @@ if(isset($_GET['logout'])) {
 function showLoginPasswordProtect($error_msg) {
 echo '<form method="post" id="login">';
 echo '<span class="err_msg">'.$error_msg.'</span><br />';
-if (USE_USERNAME) echo 'username (admin): <br /><input class="input" type="input" name="access_login" /> <br />';
+if (USE_USERNAME) echo 'username (private): <br /><input class="input" type="input" name="access_login" /> <br />';
 echo 'password (demo): <br /><input class="input" type="password" name="access_password"/><br />';
 echo '<input class="submit" type="submit" name="Submit" value="Submit" />';
 echo '</form>';
