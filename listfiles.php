@@ -38,5 +38,5 @@ function listFolderFiles($dir,$exclude){
     }
     echo '</ul>';
 }
-listFolderFiles('./saved',array('index.php','edit_.php', 'admin'));
+listFolderFiles('./saved',array('index.php','edit_.php', 'undefined.md', 'undefined', 'admin'));
 ?>
