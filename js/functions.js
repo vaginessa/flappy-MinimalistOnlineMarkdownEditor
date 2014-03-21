@@ -44,7 +44,7 @@ function saveToFile()
 			xhr.open( 'post', './save.php', true );
 			xhr.send(data);
 			// alert with the paths, just for control
-			alert ('File '+nameToSave+' was saved to: ./save/'+subFolder+nameToSave);
+			alert ('File '+nameToSave+' was saved 666 to: ./save/'+subFolder+nameToSave);
 			setCookie("cacheFileName",nameToSave,"14");
 			// Reload list of files
 		    $.ajax({
