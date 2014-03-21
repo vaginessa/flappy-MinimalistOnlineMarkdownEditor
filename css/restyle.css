@@ -1,0 +1,36 @@
+.list_files {
+	list-style: none;
+}
+.list_files li {
+	font-size: 1.1em;
+	line-height: 2em;
+	vertical-align: middle;
+}
+.list_files li a {
+	text-decoration: none;
+}
+.list_files li a:hover {
+	color: #FF1100;
+}
+h3 {
+	font-size: 1.6em;
+	font-weight: lighter;
+}
+form {
+	width: 100%;
+	color: #222;
+}
+form .input {
+	width: 150px;
+	height: 30px;
+	line-height: 2em;
+	margin: 1em;
+	border: #aaa solid 1px;
+}
+form .submit {
+	width: 150px;
+	height: 30px;
+	line-height: 2em;
+	margin: 1em;
+	border: #aaa solid 1px;
+}

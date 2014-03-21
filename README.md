@@ -1,5 +1,12 @@
-Minimalist Online Markdown Editor
-=================================
+mome
+====
 
-This is the source for the **simplest** and **slickest** online Markdown editor, available online here: http://markdown.pioul.fr  
-Just write Markdown and see what it looks like as you type. And convert it to HTML in one click.
+- based on Minimalist Online Markdown Editor by [pioul](https://github.com/pioul/MinimalistOnlineMarkdownEditor) - credits goes to him ;)
+
+A simple markdown editor with live preview.
+
+This is just edited version with Load and Save feature.
+
+See [mome demo](http://mome.fswitch.cz) in action.
+
+Every idea or tweaks are welcomed.

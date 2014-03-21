@@ -8,6 +8,7 @@
 		<meta property="og:image" content="http://markdown.pioul.fr/images/markdown.png"/>
 		<link rel="stylesheet" href="css/main.css" type="text/css">
 		<link rel="stylesheet" href="css/ionicons.css" type="text/css">
+		<link rel="stylesheet" href="css/restyle.css" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/showdown.js"></script>
@@ -15,18 +16,35 @@
 	<body>
 		<div id="left-column">
 			<div id="top_panels_container">
+				<div class="top_panel" id="quick-login-area">
+					<div class="close">×</div>
+					<?php 
+					// check for privileges
+					if (isset($_COOKIE['username_log'])) {
+						$loggedas = $_COOKIE['username_log'];
+						echo "Logged as: ".$loggedas."<br />";
+						echo '<a href="?logout=1">Logout</a>';
+					}else{
+						echo "You are here as Guest<br />";
+					};
+					include("/data/www/19361/fswitch_cz/dev.mome/password_protect.php");
+					?>
+				</div>
 				<div class="top_panel" id="quick-reference">
 					<div class="close">×</div>
+					<div id="listfiles">
 					<?php
 					include "listfiles.php";
 					?>
+					</div>
 				</div>
 			</div>
 			<div class="wrapper">
 				<div class="buttons-container">
+					<a href="#" class="button toppanel" data-toppanel="quick-login-area">Private</a>
 					<a href="#" class="button toppanel" data-toppanel="quick-reference">Files</a>
 					<a href="#" onClick="loadFromFile()" class="button toppanel">Load</a>
-					<a href="#" onClick="saveToFile()" class="button toppanel">Save</a>
+					<a href="#" onClick="saveToFile()" class="button toppanel">Save as...</a>
 					<a href="#" class="button icon-arrow-expand feature" data-feature="fullscreen" data-tofocus="markdown" title="Go fullscreen"></a>
 					<div class="clear"></div>
 				</div>
@@ -58,39 +76,6 @@
 			<a href="#" class="button icon-arrow-expand feature" data-feature="fullscreen" title="Exit fullscreen"></a>
 			<div class="clear"></div>
 		</div>
-		<script type="text/javascript">
-		function saveToFile()
-			{
-				var nameToSave = prompt("Name of the file w/o .md","mome-");
-
-				if (nameToSave!=null)
-				{
-					  /*x = "Hello " + person + "! How are you today?";
-					  document.getElementById("demo").innerHTML=x;*/
-					
-					//var textToSave = document.getElementById('markdown').innerHTML; 
-				    var textToSave = localStorage.getItem("markdown");
-					var data = new FormData();
-					data.append("data" , textToSave);
-					data.append("name" , nameToSave);
-					var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
-					xhr.open( 'post', './save.php', true );
-					xhr.send(data);
-					//alert("Saved to "+nameToSave+".md");
-				}
-			}
-		function loadFromFile(fileToLoad)
-			{
-				var fileToLoad = prompt("Open file w/o .md",fileToLoad);
-				if (fileToLoad!=null)
-				{
-				    var filename = './saved/'+fileToLoad+'.md';
-				    $.get(filename, null, function(response){
-	   				 $("#markdown").val(response);
-					});
-					//alert("Loaded from "+fileToLoad+".md");	
-				}
-			}
-		</script>
+		<script src="js/functions.js"></script>
 	</body>
 </html>
