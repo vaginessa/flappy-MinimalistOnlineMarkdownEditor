@@ -23,7 +23,7 @@
 					if (isset($_COOKIE['username_log'])) {
 						$loggedas = $_COOKIE['username_log'];
 						echo "Logged as: ".$loggedas."<br />";
-						echo '<a href="?logout=1">Logout</a>';
+						echo '<a href="http://'.$_SERVER['SERVER_NAME'].'/index.php?logout=1">Logout</a>';
 					}else{
 						echo "You are here as Guest<br />";
 					};
