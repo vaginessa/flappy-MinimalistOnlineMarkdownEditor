@@ -1,9 +1,3 @@
-mome
-====
-
-<<<<<<< HEAD
-- based on Minimalist Online Markdown Editor by [pioul](https://github.com/pioul/MinimalistOnlineMarkdownEditor) - credits goes to him ;)
-
 A simple markdown editor with live preview.
 =======
 This is the source for the **simplest** and **slickest** online Markdown editor, available online here: http://markdown.pioul.fr  
@@ -25,4 +19,4 @@ Every idea or tweaks are welcomed.
 - Add DELETE button
 - Add login support for protecting private content
 - make this usable in Phile or Pico
->>>>>>> d30e6e01033969f91b27991e75dbfe9969923b66
+
