@@ -23,11 +23,11 @@
 					if (isset($_COOKIE['username_log'])) {
 						$loggedas = $_COOKIE['username_log'];
 						echo "Logged as: ".$loggedas."<br />";
-						echo '<a href="http://'.$_SERVER['SERVER_NAME'].'/index.php?logout=1">Logout</a>';
+						echo '<a href="index.php?logout=1">Logout</a>';
 					}else{
 						echo "You are here as Guest<br />";
 					};
-					include("/data/www/19361/fswitch_cz/dev.mome/password_protect.php");
+					include("/password_protect.php");
 					?>
 				</div>
 				<div class="top_panel" id="quick-reference">
