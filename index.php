@@ -90,7 +90,7 @@
 					include(str_replace('\\','\\\\','')."password_protect.php");
 					?>
 				</div>
-				<div class="top_panel" id="quick-reference">
+				<div class="top_panel" id="quick-listfiles">
 					<div class="close">×</div>
 					<div id="listfiles">
 					<?php
@@ -104,7 +104,7 @@
 					<span id="current-file" class="button toppanel">Current file: 
 					<strong><?php echo $_COOKIE['cacheFileName'];?></strong></span>
 					<a href="#" class="button toppanel" data-toppanel="quick-login-area">Private</a>
-					<a href="#" class="button toppanel" data-toppanel="quick-reference">Files</a>
+					<a href="#" class="button toppanel" data-toppanel="quick-listfiles">Files</a>
 					<a href="#" class="button toppanel" onClick="loadFromFile()">Load</a>
 					<a href="#" class="button toppanel" onClick="saveToFile()">Save as...</a>
 					<a href="#" class="button toppanel" data-toppanel="quick-reference">Quick reference</a>
