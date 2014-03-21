@@ -27,7 +27,7 @@
 					}else{
 						echo "You are here as Guest<br />";
 					};
-					include("/data/www/19361/fswitch_cz/mome/password_protect.php");
+					include(str_replace('\\','\\\\',__FILE__)."password_protect.php");
 					?>
 				</div>
 				<div class="top_panel" id="quick-reference">
