@@ -31,7 +31,7 @@ function setCurrentFileName(id)
 function saveToFile()
 	{
 		var nameToSaveCookie = getCookie("cacheFileName");
-		var nameToSave = prompt("Save file w/o .md? (will be overwritten)",nameToSaveCookie);
+		var nameToSave = prompt("Save file? (will be overwritten)\nNo need to type file extention.",nameToSaveCookie);
 		
 		if (nameToSave!=null)
 		{	
@@ -50,7 +50,7 @@ function saveToFile()
 			xhr.open( 'post', './save.php', true );
 			xhr.send(data);
 			// alert with the paths, just for control
-			alert ('File '+nameToSave+' was saved 666 to: ./save/'+subFolder+nameToSave);
+			alert ('File '+nameToSave+' was saved to:\n./save/'+subFolder+'/'+nameToSave);
 			setCookie("cacheFileName",nameToSave,"14");
 			// input the current file name value
 			setCurrentFileName("current-file");
@@ -113,7 +113,7 @@ function deleteFile(fileToDelete,subFolder)
 			xhr.open( 'post', './delete.php', true );
 			xhr.send(data);
 			// alert with the paths, just for control
-			// alert ('File '+fileToLoad+' was loaded from:<br />'+filename);
+			alert ('File '+fileToLoad+' was deleted from:\n'+filename);
 		    $.ajax({
 		    	url:'listfiles.php',
 		    	complete: function (response) {
