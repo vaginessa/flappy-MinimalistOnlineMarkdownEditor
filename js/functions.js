@@ -50,7 +50,7 @@ function saveToFile()
 			xhr.open( 'post', './save.php', true );
 			xhr.send(data);
 			// alert with the paths, just for control
-			alert ('File '+nameToSave+' was saved to:\n./save/'+subFolder+'/'+nameToSave);
+			alert ('File '+nameToSave+' was saved to:\n./saved/'+subFolder+'/'+nameToSave);
 			setCookie("cacheFileName",nameToSave,"14");
 			// input the current file name value
 			setCurrentFileName("current-file");
