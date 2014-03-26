@@ -4,7 +4,7 @@ function checkLogin(){
 	// check for privileges
 	if (isset($_COOKIE['username_log'])) {
 		$loggedas = $_COOKIE['username_log'];
-		echo "Logged as: ".$loggedas."<br />";
+		echo "Folder: <strong>".$loggedas."</strong><br />";
 		echo '<a href="index.php?logout=1">Logout</a>';
 	}else{
 		echo "You are here as Guest<br />";

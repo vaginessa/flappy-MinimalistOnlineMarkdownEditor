@@ -19,16 +19,13 @@ require "core/core_functions.php";
 	<body>
 		<div id="left-column">
 			<div id="top_panels_container">
-				<div class="top_panel" id="quick-login-area">
+				<div class="top_panel" id="quick-listfiles">
 					<div class="close">×</div>
 					<?php 
 					// check for privileges
 					checkLogin();
 					getUserName();
 					?>
-				</div>
-				<div class="top_panel" id="quick-listfiles">
-					<div class="close">×</div>
 					<div id="listfiles">
 					<?php
 					include "listfiles.php";
@@ -41,8 +38,7 @@ require "core/core_functions.php";
 					<span id="success"></span>
 					<span id="current-file" class="button toppanel">Current file: 
 					<strong><?php echo $_COOKIE['cacheFileName'];?></strong></span>
-					<a href="#" class="button toppanel" data-toppanel="quick-login-area">Private</a>
-					<a href="#" class="button toppanel" data-toppanel="quick-listfiles">List Files</a>
+					<a href="#" class="button toppanel" data-toppanel="quick-listfiles">List Files / Login</a>
 					<a href="#" class="button toppanel" onClick="newFile()">New</a>
 					<a href="#" class="button toppanel" onClick="saveFile()">Save</a>
 					<a href="#" class="button icon-arrow-expand feature" data-feature="fullscreen" data-tofocus="markdown" title="Go fullscreen"></a>
