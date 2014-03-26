@@ -14,6 +14,7 @@ This is just edited version with some features.
 - List files - show content of current folder
 - Current file indicator
 - Load / Save / Create .md files, as well as edit them (viz [demo](http://mome.fswitch.cz))
+- support subdirectories
 
 #### Screenshots
 
@@ -32,7 +33,6 @@ Every idea or tweaks are welcomed.
 
 ### ToDo
 
-- support subdirectories
 - create custom users
 - unite some settings, little settings panel (manage folders/users)
 - make this usable in Phile or Pico
