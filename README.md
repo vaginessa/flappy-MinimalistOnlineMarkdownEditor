@@ -15,6 +15,7 @@ This is just edited version with some features.
 - Current file indicator
 - Load / Save / Create .md files, as well as edit them (viz [demo](http://mome.fswitch.cz))
 - support subdirectories
+- click on directory name to change active path for saving files (admin)
 
 #### Screenshots
 
