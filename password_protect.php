@@ -49,7 +49,9 @@ $LOGIN_INFORMATION = array(
 // Add login/password pairs below, like described above
 // NOTE: all rows except last must have comma "," at the end of line
 $LOGIN_INFORMATION = array(
-      'private' => 'demo'
+      'private' => 'demo',
+      'admin' => 'admin',
+      'public' => 'demo'
       );
 
 // request login? true - show login and password boxes, false - password box only
@@ -86,6 +88,7 @@ $timeout = (TIMEOUT_MINUTES == 0 ? 0 : time() + TIMEOUT_MINUTES * 60);
 if(isset($_GET['logout'])) {
   setcookie("verify", '', $timeout, '/'); // clear password;
   setcookie("username_log", '', $timeout, '/'); // clear username;
+  setcookie("cacheFilePath", "./saved/public", $timeout); // set default folder path cookie
   header('Location: ' . LOGOUT_URL);
   exit();
 }
@@ -115,6 +118,7 @@ if (isset($_POST['access_password'])) {
     // set cookie if password was validated
     setcookie("verify", md5($login.'%'.$pass), $timeout, '/');
     setcookie("username_log", $login, $timeout, '/');
+    setcookie("cacheFilePath", "./saved/".$login, $timeout);
     
     // Some programs (like Form1 Bilder) check $_POST array to see if parameters passed
     // So need to clear password protector variables
@@ -134,20 +138,21 @@ else {
 		$found = false;
 		foreach($LOGIN_INFORMATION as $key=>$val) {
 			$lp = (USE_USERNAME ? $key : '') .'%'.$val;
-				if ($_COOKIE['verify'] == md5($lp)) {
+			if ($_COOKIE['verify'] == md5($lp)) {
 				$found = true;
 				// prolong timeout
 				if (TIMEOUT_CHECK_ACTIVITY) {
-				setcookie("verify", md5($lp), $timeout, '/');
+          setcookie("verify", md5($lp), $timeout, '/');
 				}
-			break;
-			}
+			  break;
+      }
 		}
 		if (!$found) {
 			showLoginPasswordProtect("Bad cookie...");
 		}
 	}else{
 		showLoginPasswordProtect("");	
+    setcookie("cacheFilePath", "./saved/public", $timeout);
 	}
 }
 

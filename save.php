@@ -1,14 +1,14 @@
 <?php
-if(!empty($_POST['data'])){
-$data = $_POST['data'];
-$sendname = $_POST['name'].".md";
+if(!empty($_POST['filename'])){
+		
+	$filename = $_POST['filename'].".md";
+	$data = $_POST['data'];
 
-if ($_POST['subFolder'] != ""){
-$subfolder = $_POST['subFolder']."/"; 
-};
+	$pathtosave = $_POST['pathtosave'];
 
-$file = fopen("saved/".$subfolder.$sendname, 'w');
-fwrite($file, $data);
-fclose($file);
+	if (isset($userfolder)){ $userfolder = $userfolder.'/'; };
+	$file = fopen($pathtosave."/".$filename, 'w');
+	fwrite($file, $data);
+	fclose($file);		
 }
 ?>

@@ -1,17 +1,16 @@
-
 <?php
-if(!empty($_POST['name'])){
-$fileName = $_POST['name'];
+if(!empty($_POST['filename'])){
 
-if ($_POST['subFolder'] != ""){
-$subfolder = $_POST['subFolder'].'/'; 
-};
+	$fileName = $_POST['filename'].".md";
+	$pathToFile = $_POST['pathToFile'].'/'; 
 
-unlink("saved/".$subfolder.$fileName.".md");
+	unlink($pathToFile.$fileName);
+
 /*
 $old = getcwd(); // Save the current directory
 chdir("saved/".$subfolder);
 unlink($fileName);
 chdir($old); // Restore the old working directory */
+
 }
 ?>
