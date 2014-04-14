@@ -38,3 +38,4 @@ Every idea or tweaks are welcomed.
 - unite some settings, little settings panel (manage folders/users)
 - make this usable in Phile or Pico
 - ask for file path (create libraries - post, note, cv, etc.)
+- add short-cuts functionality
