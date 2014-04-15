@@ -1,5 +1,5 @@
 <?php
-require "core/core_functions.php";
+include "./core.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +15,12 @@ require "core/core_functions.php";
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/showdown.js"></script>
+		<script src="js/functions.js"></script>
+		<script>
+		function activeFolder(id){
+			$( id ).toggle( "slow" );
+		}
+		</script>
 	</head>
 	<body>
 		<div id="left-column">
@@ -24,12 +30,19 @@ require "core/core_functions.php";
 					<?php 
 					// check for privileges
 					checkLogin();
-					getUserName();
 					?>
+					<br />
+					<script type="text/javascript">
+					var pathToFile = getCookie("cacheFilePath");
+					document.getElementById('current-folder').innerHTML=pathToFile;
+					</script>
+					<div id="current-folder">
+					</div>
 					<div id="listfiles">
-					<?php
-					include "listfiles.php";
-					?>
+					<script type="text/javascript">
+					var pathToFile = getCookie("cacheFilePath");
+					listFolderFiles(pathToFile);
+					</script>
 					</div>
 				</div>
 			</div>
@@ -37,9 +50,10 @@ require "core/core_functions.php";
 				<div class="buttons-container">
 					<span id="success"></span>
 					<span id="current-file" class="button toppanel">Current file: 
-					<strong><?php echo $_COOKIE['cacheFileName'];?></strong></span>
+					<strong><?php if (isset($_COOKIE['cacheFileName'])){echo $_COOKIE['cacheFileName'];};?></strong></span>
 					<a href="#" class="button toppanel" data-toppanel="quick-listfiles">List Files / Login</a>
 					<a href="#" class="button toppanel" onClick="newFile()">New</a>
+					<a href="#" class="button toppanel" onClick="newFolder()">New Folder</a>
 					<a href="#" class="button toppanel" onClick="saveFile()">Save</a>
 					<a href="#" class="button icon-arrow-expand feature" data-feature="fullscreen" data-tofocus="markdown" title="Go fullscreen"></a>
 					<div class="clear"></div>
@@ -72,6 +86,5 @@ require "core/core_functions.php";
 			<a href="#" class="button icon-arrow-expand feature" data-feature="fullscreen" title="Exit fullscreen"></a>
 			<div class="clear"></div>
 		</div>
-		<script src="js/functions.js"></script>
 	</body>
 </html>

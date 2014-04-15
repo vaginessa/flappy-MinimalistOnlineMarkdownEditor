@@ -48,11 +48,7 @@ $LOGIN_INFORMATION = array(
 
 // Add login/password pairs below, like described above
 // NOTE: all rows except last must have comma "," at the end of line
-$LOGIN_INFORMATION = array(
-      'private' => 'demo',
-      'admin' => 'admin',
-      'public' => 'demo'
-      );
+$LOGIN_INFORMATION = $GLOBALS["CORE_list_of_users"];
 
 // request login? true - show login and password boxes, false - password box only
 define('USE_USERNAME', true);
@@ -88,7 +84,7 @@ $timeout = (TIMEOUT_MINUTES == 0 ? 0 : time() + TIMEOUT_MINUTES * 60);
 if(isset($_GET['logout'])) {
   setcookie("verify", '', $timeout, '/'); // clear password;
   setcookie("username_log", '', $timeout, '/'); // clear username;
-  setcookie("cacheFilePath", "./saved/public", $timeout); // set default folder path cookie
+  setcookie("cacheFilePath", "/saved/guest", $timeout); // set default folder path cookie
   header('Location: ' . LOGOUT_URL);
   exit();
 }
@@ -96,8 +92,10 @@ if(isset($_GET['logout'])) {
 function showLoginPasswordProtect($error_msg) {
 echo '<form method="post" id="login">';
 echo '<span class="err_msg">'.$error_msg.'</span><br />';
-if (USE_USERNAME) echo 'username (private): <br /><input class="input" type="input" name="access_login" /> <br />';
-echo 'password (demo): <br /><input class="input" type="password" name="access_password"/><br />';
+if (USE_USERNAME){ 
+  echo '<input class="input" type="input" name="access_login" />';
+}
+echo '<input class="input" type="password" name="access_password"/>';
 echo '<input class="submit" type="submit" name="Submit" value="Submit" />';
 echo '</form>';
   // stop at this point
@@ -118,8 +116,11 @@ if (isset($_POST['access_password'])) {
     // set cookie if password was validated
     setcookie("verify", md5($login.'%'.$pass), $timeout, '/');
     setcookie("username_log", $login, $timeout, '/');
+    if ($login !== "admin"){
     setcookie("cacheFilePath", "./saved/".$login, $timeout);
-    
+    }else {
+    setcookie("cacheFilePath", "./saved", $timeout);
+    }
     // Some programs (like Form1 Bilder) check $_POST array to see if parameters passed
     // So need to clear password protector variables
     unset($_POST['access_login']);
@@ -128,9 +129,7 @@ if (isset($_POST['access_password'])) {
     header('Location: ' . LOGOUT_URL);
   }
 
-}
-
-else {
+}else {
 
   // check if password cookie is set
   if (isset($_COOKIE['verify'])) {
@@ -152,7 +151,7 @@ else {
 		}
 	}else{
 		showLoginPasswordProtect("");	
-    setcookie("cacheFilePath", "./saved/public", $timeout);
+    setcookie("cacheFilePath", "./saved/guest", $timeout);
 	}
 }
 

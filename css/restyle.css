@@ -18,19 +18,24 @@ h3 {
 }
 form {
 	width: 100%;
+	height: 40px;
+	display: block;
 	color: #222;
 }
-form .input {
+form .input, form .submit {
 	width: 150px;
 	height: 30px;
 	line-height: 2em;
 	margin: 1em;
 	border: #aaa solid 1px;
+	float: left;
+	display: inline-block;
 }
-form .submit {
-	width: 150px;
-	height: 30px;
-	line-height: 2em;
-	margin: 1em;
-	border: #aaa solid 1px;
+li .folder-title {
+	cursor: pointer;
+	background-color: #aaaaaa;
+}
+li .file-title {
+	background-color: #aaaaaa;
+	display: none;
 }
