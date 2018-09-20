@@ -13,22 +13,13 @@ This is just edited version with some features.
 - Login / Private folder
 - List files - show content of current folder
 - Current file indicator
-- Load / Save / Create .md files, as well as edit them (viz [demo](http://mome.fswitch.cz))
+- Load / Save / Create .md files, as well as edit them (viz [demo](http://nope))
 - support subdirectories
 - click on directory name to change active path for saving files (admin)
 
-#### Screenshots
+#### Screenshots are offline.
 
-Current file feature
-![Current file feature image](http://mome.fswitch.cz/images/mome_screenshot_current_file.png "Current file feature")
-
-Private feature
-![Current file feature image](http://mome.fswitch.cz/images/mome_screenshot_private.png "Private feature")
-
-List of files feature
-![List of files feature image](http://mome.fswitch.cz/images/mome_screenshot_list_files_n.png "List of files feature")
-
-See [mome demo](http://mome.fswitch.cz) in action.
+Demo is offline.
 
 Every idea or tweaks are welcomed.
 
